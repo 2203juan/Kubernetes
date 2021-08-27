@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicatset
+  labels:
+    app: myapp
+    type: front-end
+
+spec:
+  template:
+    metadata:
+      name: movie-ui-pod
+      labels:
+        app: movie-ui-app
+        type: front-end
+
+    spec:
+      containers:
+      - name: movie-ui-container
+        image: juan2203/movie-ui:latest
+
+  replicas: 6
+  selector:
+    matchLabels:
+      type: front-end

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: movie-ui-pod
+  labels:
+    app: movie-ui-app
+    type: front-end
+
+
+spec:
+  containers:
+  - name: movie-ui-container
+    image: juan2203/movie-ui:latest
